@@ -31,7 +31,7 @@ type = "Fight"
 strategy = "first"  # 顺序匹配变体
 
 [tasks.params]
-stage = Annihilation
+stage = "Annihilation"
 expiring_medicine = 1000
 client_type = "Official"
 report_to_penguin = true
