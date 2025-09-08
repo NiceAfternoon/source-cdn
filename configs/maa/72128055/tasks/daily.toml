@@ -31,12 +31,14 @@ type = "Fight"
 strategy = "first"  # 顺序匹配变体
 
 [tasks.params]
-stage = "Annihilation"
 expiring_medicine = 1000
 client_type = "Official"
 report_to_penguin = true
 penguin_id = "687848340"    # 企鹅物流的id
 
+# 优先刷剿灭
+[[tasks.variants]]
+params = { stage = "Annihilation" }
 
 # 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
 [[tasks.variants]]
