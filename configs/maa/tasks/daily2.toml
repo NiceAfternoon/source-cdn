@@ -64,7 +64,7 @@ params = { stage = "PR-D-2", series = 0 }
 condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Official" }
 params = { stage = "PR-C-2", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Fri, Sun"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Fri", "Sun"], timezone = "Official" }
 params = { stage = "CA-5", series = 0 }
 [[tasks.variants]]
 condition = { type = "Weekday", weekdays = ["Sat"], timezone = "Official" }
