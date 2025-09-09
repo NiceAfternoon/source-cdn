@@ -6,6 +6,7 @@ type = "StartUp"
 [tasks.params]
 client_type = "Official"
 start_game_enabled = true
+account_name = 166***8938
 
 #----------------------------- 公开招募 ----------------------------#
 [[tasks]]
@@ -49,21 +50,25 @@ condition = { type = "OnSideStory" }
 params = { stage = "AveMujica-8", series = 0 }
 
 # 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
-# 周四刷PR-C-1，剩下时间刷1-7
+# 周四刷PR-C-1，周五、周日刷CA-5，周六刷AP-5
 [[tasks.variants]]
 condition = { type = "Weekday", weekdays = ["Mon"], timezone = "Official" }
-params = { stage = "PR-A-2", series = 2 }
+params = { stage = "PR-A-2", series = 0 }
 [[tasks.variants]]
 condition = { type = "Weekday", weekdays = ["Tue"], timezone = "Official" }
-params = { stage = "PR-B-2", series = 2 }
+params = { stage = "PR-B-2", series = 0 }
 [[tasks.variants]]
 condition = { type = "Weekday", weekdays = ["Wed"], timezone = "Official" }
-params = { stage = "PR-D-2", series = 2 }
+params = { stage = "PR-D-2", series = 0 }
 [[tasks.variants]]
 condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Official" }
-params = { stage = "PR-C-2", series = 2 }
+params = { stage = "PR-C-2", series = 0 }
 [[tasks.variants]]
-params = { stage = "1-7", series = 0 }
+condition = { type = "Weekday", weekdays = ["Fri, Sun"], timezone = "Official" }
+params = { stage = "CA-5", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Sat"], timezone = "Official" }
+params = { stage = "AP-5", series = 0 }
 
 #----------------------------- 基建换班 ----------------------------#
 [[tasks]]
@@ -71,7 +76,7 @@ name = "基建换班"
 type = "Infrast"
 
 [tasks.params]
-mode = 0
+mode = 20000
 facility = [
     "Trade",
     "Reception",
@@ -83,7 +88,6 @@ facility = [
     "Dorm",
     ]
 drones = "Money"
-threshold = 0.3
 dorm_notstationed_enabled = true
 dorm_trust_enabled = true
 
@@ -98,7 +102,7 @@ buy_first = ["招聘许可", "龙门币"]
 blacklist = ["碳"]
 
 [[tasks.variants]]
-condition = { type = "Time", end = "07:00:00" }
+# condition = { type = "Time", end = "07:00:00" }
 params = { credit_fight = true, select_formation = 4 }
 
 [[tasks.variants]]
