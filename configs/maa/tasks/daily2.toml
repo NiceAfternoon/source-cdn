@@ -6,7 +6,7 @@ type = "StartUp"
 [tasks.params]
 client_type = "Official"
 start_game_enabled = true
-account_name = 166****8938
+account_name = "166****8938"
 
 #----------------------------- 公开招募 ----------------------------#
 [[tasks]]
