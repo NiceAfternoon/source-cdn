@@ -28,7 +28,7 @@ penguin_id = "687848340"    # 企鹅物流的id
 [[tasks]]
 name = "刷理智"
 type = "Fight"
-strategy = "merge"  # 顺序匹配变体
+strategy = "merge"  # 变体进行合并，从最后开始依次往前执行
 
 [tasks.params]
 expiring_medicine = 1000
@@ -53,14 +53,14 @@ params = { stage = "PR-C-2", series = 2 }
 [[tasks.variants]]
 params = { stage = "1-7", series = 0 }
 
-# 优先刷剿灭
-[[tasks.variants]]
-params = { stage = "Annihilation" }
-
 # 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
 [[tasks.variants]]
 condition = { type = "OnSideStory" }
 params = { stage = "AveMujica-8", series = 0 }
+
+# 优先刷剿灭
+[[tasks.variants]]
+params = { stage = "Annihilation" }
 
 #----------------------------- 基建换班 ----------------------------#
 [[tasks]]
