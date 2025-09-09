@@ -77,6 +77,13 @@ type = "Infrast"
 
 [tasks.params]
 mode = 20000
+facility = [
+    "Trade",
+    "Reception",
+    "Control",
+    "Training",
+    "Dorm",
+    ]
 drones = "Money"
 dorm_notstationed_enabled = true
 dorm_trust_enabled = true
