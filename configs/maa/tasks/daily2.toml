@@ -80,13 +80,9 @@ mode = 20000
 facility = [
     "Trade",
     "Reception",
-    "Control",
-    "Training",
-    "Dorm",
+    "Training"
     ]
 drones = "Money"
-dorm_notstationed_enabled = true
-dorm_trust_enabled = true
 
 #------------------------------ 信用及购物 ------------------------------#
 [[tasks]]
