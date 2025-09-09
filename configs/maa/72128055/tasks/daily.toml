@@ -28,22 +28,13 @@ penguin_id = "687848340"    # 企鹅物流的id
 [[tasks]]
 name = "刷理智"
 type = "Fight"
-strategy = "first"  # 顺序匹配变体
+strategy = "merge"  # 顺序匹配变体
 
 [tasks.params]
 expiring_medicine = 1000
 client_type = "Official"
 report_to_penguin = true
 penguin_id = "687848340"    # 企鹅物流的id
-
-# 优先刷剿灭
-[[tasks.variants]]
-params = { stage = "Annihilation" }
-
-# 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
-[[tasks.variants]]
-condition = { type = "OnSideStory" }
-params = { stage = "AveMujica-8", series = 0 }
 
 # 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
 # 周四刷PR-C-1，剩下时间刷1-7
@@ -62,22 +53,14 @@ params = { stage = "PR-C-2", series = 2 }
 [[tasks.variants]]
 params = { stage = "1-7", series = 0 }
 
-#------------------------------ 信用及购物 ------------------------------#
-[[tasks]]
-name = "信用及购物"
-type = "Mall"
-
-[tasks.params]
-shopping = true
-buy_first = ["招聘许可", "龙门币"]
-blacklist = ["碳"]
-
+# 优先刷剿灭
 [[tasks.variants]]
-condition = { type = "Time", end = "07:00:00" }
-params = { credit_fight = true, select_formation = 4 }
+params = { stage = "Annihilation" }
 
+# 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
 [[tasks.variants]]
-params = { shopping = true }
+condition = { type = "OnSideStory" }
+params = { stage = "AveMujica-8", series = 0 }
 
 #----------------------------- 基建换班 ----------------------------#
 [[tasks]]
@@ -100,6 +83,23 @@ drones = "Money"
 threshold = 0.3
 dorm_notstationed_enabled = true
 dorm_trust_enabled = true
+
+#------------------------------ 信用及购物 ------------------------------#
+[[tasks]]
+name = "信用及购物"
+type = "Mall"
+
+[tasks.params]
+shopping = true
+buy_first = ["招聘许可", "龙门币"]
+blacklist = ["碳"]
+
+[[tasks.variants]]
+condition = { type = "Time", end = "07:00:00" }
+params = { credit_fight = true, select_formation = 4 }
+
+[[tasks.variants]]
+params = { shopping = true }
 
 #------------------------------ 领取奖励 -----------------------------#
 [[tasks]]
