@@ -23,18 +23,30 @@ recruitment_time = { '3' = 460 }
 report_to_penguin = true
 penguin_id = "687848340"    # 企鹅物流的id
 
-#------------------------------ 刷理智 -----------------------------#
+#------------------------------ 剿灭 & 刷理智 -----------------------------#
+[[tasks]]
+name = "剿灭"
+type = "Fight"
+
+# 优先刷剿灭
+[[tasks.variants]]
+params = { stage = "Annihilation" }
 
 [[tasks]]
 name = "刷理智"
 type = "Fight"
-strategy = "merge"  # 变体进行合并，从最后开始依次往前执行
+strategy = "first"  # 以先后顺序执行变体任务
 
 [tasks.params]
 expiring_medicine = 1000
 client_type = "Official"
 report_to_penguin = true
 penguin_id = "687848340"    # 企鹅物流的id
+
+# 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
+[[tasks.variants]]
+condition = { type = "OnSideStory" }
+params = { stage = "AveMujica-8", series = 0 }
 
 # 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
 # 周四刷PR-C-1，剩下时间刷1-7
@@ -52,15 +64,6 @@ condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Official" }
 params = { stage = "PR-C-2", series = 2 }
 [[tasks.variants]]
 params = { stage = "1-7", series = 0 }
-
-# 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
-[[tasks.variants]]
-condition = { type = "OnSideStory" }
-params = { stage = "AveMujica-8", series = 0 }
-
-# 优先刷剿灭
-[[tasks.variants]]
-params = { stage = "Annihilation" }
 
 #----------------------------- 基建换班 ----------------------------#
 [[tasks]]
