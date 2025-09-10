@@ -3,4 +3,4 @@ name = "争锋频道：蜜果城"
 type = "Custom"
 
 [tasks.params]
-name = "HoneyFruit"
+task_names = "GreenGrass@DuelChannel@Begin"
