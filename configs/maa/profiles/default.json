@@ -3,6 +3,6 @@
     "adb_lite_enabled": false,
     "deployment_with_pause": false,
     "kill_adb_on_exit": false,
-    "touch_mode": "minitouch"
+    "touch_mode": "MaaTouch"
   }
 }
