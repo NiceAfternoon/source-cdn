@@ -1,3 +1,5 @@
 [[tasks]]
 name = "争锋频道：蜜果城"
-type = "custom"
+type = "Custom"
+
+tasks_name = { type = "Arena Channel: Honeydew" }
