@@ -1,0 +1,113 @@
+#----------------------------- 开始唤醒 ----------------------------#
+[[tasks]]
+name = "开始唤醒"
+type = "StartUp"
+
+[tasks.params]
+client_type = "Bilibili"
+start_game_enabled = true
+account_name = "下午好p"
+
+#----------------------------- 公开招募 ----------------------------#
+[[tasks]]
+name = "公开招募"
+type = "Recruit"
+
+[tasks.params]
+refresh = true
+times = 100
+select = [1, 3, 4, 5]
+confirm = [1, 3, 4, 5]
+first_tags = [ "输出", "生存" ]
+skip_robot = false
+recruitment_time = { '3' = 460 }
+report_to_penguin = true
+penguin_id = "687848340"    # 企鹅物流的id
+
+#------------------------------ 剿灭 & 刷理智 -----------------------------#
+[[tasks]]
+name = "剿灭"
+type = "Fight"
+
+# 优先刷剿灭
+[[tasks.variants]]
+params = { stage = "Annihilation" }
+
+[[tasks]]
+name = "刷理智"
+type = "Fight"
+strategy = "first"  # 以先后顺序执行变体任务
+
+[tasks.params]
+expiring_medicine = 1000
+client_type = "Official"
+report_to_penguin = true
+penguin_id = "687848340"    # 企鹅物流的id
+
+# 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
+[[tasks.variants]]
+condition = { type = "OnSideStory" }
+params = { stage = "AveMujica-7", series = 0 }
+
+# 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
+# 周四刷PR-C-1，周五、周日刷CA-5，周六刷AP-5
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Mon"], timezone = "Official" }
+params = { stage = "PR-A-2", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Tue"], timezone = "Official" }
+params = { stage = "PR-B-2", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Wed"], timezone = "Official" }
+params = { stage = "PR-D-2", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Official" }
+params = { stage = "PR-C-2", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Fri", "Sun"], timezone = "Official" }
+params = { stage = "CA-5", series = 0 }
+[[tasks.variants]]
+condition = { type = "Weekday", weekdays = ["Sat"], timezone = "Official" }
+params = { stage = "AP-5", series = 0 }
+
+#----------------------------- 基建换班 ----------------------------#
+[[tasks]]
+name = "基建换班"
+type = "Infrast"
+
+[tasks.params]
+mode = 20000
+facility = [
+    "Trade",
+    "Reception",
+    "Training"
+    ]
+drones = "Money"
+
+#------------------------------ 信用及购物 ------------------------------#
+[[tasks]]
+name = "信用及购物"
+type = "Mall"
+
+[tasks.params]
+shopping = true
+buy_first = ["招聘许可", "龙门币"]
+
+[[tasks.variants]]
+# condition = { type = "Time", end = "07:00:00" }
+params = { credit_fight = true, select_formation = 4 }
+
+[[tasks.variants]]
+params = { shopping = true }
+
+#------------------------------ 领取奖励 -----------------------------#
+[[tasks]]
+name = "领取奖励"
+type = "Award"
+
+[tasks.params]
+award = true
+mail = true
+orundum = true
+mining = true
+specialaccess = true
