@@ -6,7 +6,7 @@ type = "StartUp"
 [tasks.params]
 client_type = "Bilibili"
 start_game_enabled = true
-account_name = "下午好p"
+account_name = "下午好P"
 
 #----------------------------- 公开招募 ----------------------------#
 [[tasks]]
