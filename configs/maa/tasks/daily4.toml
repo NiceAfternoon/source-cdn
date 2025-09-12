@@ -40,7 +40,7 @@ strategy = "first"  # 以先后顺序执行变体任务
 
 [tasks.params]
 expiring_medicine = 1000
-client_type = "Official"
+client_type = "Bilibili"
 report_to_penguin = true
 penguin_id = "687848340"    # 企鹅物流的id
 
@@ -52,22 +52,22 @@ params = { stage = "AveMujica-7", series = 0 }
 # 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
 # 周四刷PR-C-1，周五、周日刷CA-5，周六刷AP-5
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Mon"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Mon"], timezone = "Bilibili" }
 params = { stage = "PR-A-2", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Tue"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Tue"], timezone = "Bilibili" }
 params = { stage = "PR-B-2", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Wed"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Wed"], timezone = "Bilibili" }
 params = { stage = "PR-D-2", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Thu"], timezone = "Bilibili" }
 params = { stage = "PR-C-2", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Fri", "Sun"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Fri", "Sun"], timezone = "Bilibili" }
 params = { stage = "CA-5", series = 0 }
 [[tasks.variants]]
-condition = { type = "Weekday", weekdays = ["Sat"], timezone = "Official" }
+condition = { type = "Weekday", weekdays = ["Sat"], timezone = "Bilibili" }
 params = { stage = "AP-5", series = 0 }
 
 #----------------------------- 基建换班 ----------------------------#
