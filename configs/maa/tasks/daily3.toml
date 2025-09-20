@@ -47,7 +47,7 @@ penguin_id = "687848340"    # 企鹅物流的id
 # 默认除剿灭外优先刷活动关卡，需要手动编辑关卡名称
 [[tasks.variants]]
 condition = { type = "OnSideStory" }
-params = { stage = "AveMujica-8", series = 0 }
+params = { stage = "GO-7", series = 0 }
 
 # 没有活动开放时候的默认情况，周一刷PR-A-2，周二刷PR-B-2，周三刷PR-D-2，
 # 周四刷PR-C-1，剩下时间刷1-7
